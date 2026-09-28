@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Sinopsis - Pengabdi Setan 2</title>
+<title>Sinopsis - Pengabdi Setan</title>
 <style>
     body {
         font-family: "Times New Roman", Times, serif;
@@ -47,23 +47,6 @@
         color: #d4af37;
         text-decoration: underline;
     }
-    p {
-        font-size: 16px;
-        line-height: 1.6;
-        color: #d8d3c6;
-    }
-    .poster {
-        float: left;
-        max-width: 220px;
-        width: 100%;
-        height: auto;
-        margin: 5px 20px 10px 0;
-        border: 2px solid #d4af37;
-        box-shadow: 0 0 15px rgba(0,0,0,0.6);
-    }
-    .clear {
-        clear: both;
-    }
     h2 {
         font-size: 22px;
         margin-top: 30px;
@@ -71,23 +54,88 @@
         border-bottom: 2px solid #d4af37;
         padding-bottom: 5px;
     }
-    .info-box {
-        background-color: #161616;
-        border: 1px solid #3a3a3a;
-        border-radius: 8px;
-        padding: 16px 20px;
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #d8d3c6;
+    }
+    .hint {
+        font-size: 14px;
+        color: #b3aca0;
+        font-style: italic;
+    }
+
+    table.film {
+        width: 100%;
+        border-collapse: collapse;
         margin-top: 15px;
+        font-size: 16px;
+        background: #161616;
     }
-    .info-box p {
-        margin: 6px 0;
-        font-size: 15px;
+    table.film th {
+        background-color: #262019;
+        color: #d4af37;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
+        padding: 12px 14px;
+        text-align: left;
+        border: 1px solid #3a3a3a;
     }
-    .info-box span {
+    table.film td {
+        padding: 12px 14px;
+        border: 1px solid #3a3a3a;
+        color: #eae6da;
+    }
+    table.film td.rating {
         color: #d4af37;
         font-weight: bold;
-        display: inline-block;
-        width: 130px;
     }
+    table.film tbody tr {
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+    table.film tbody tr:hover td {
+        background-color: #201c14;
+    }
+    table.film tbody tr.aktif td {
+        background-color: #2c2415;
+        color: #d4af37;
+        font-weight: bold;
+    }
+
+    .panel {
+        background-color: #161616;
+        border: 1px solid #3a3a3a;
+        border-left: 4px solid #d4af37;
+        border-radius: 8px;
+        padding: 18px 22px;
+        margin-top: 20px;
+        overflow: hidden;
+    }
+    .panel h3 {
+        color: #d4af37;
+        font-size: 20px;
+        margin: 0 0 10px 0;
+    }
+    .panel .meta {
+        font-size: 14px;
+        color: #b3aca0;
+        margin-bottom: 10px;
+    }
+    .panel p {
+        margin: 8px 0;
+    }
+    .poster {
+        float: left;
+        max-width: 200px;
+        width: 100%;
+        height: auto;
+        margin: 5px 20px 10px 0;
+        border: 2px solid #d4af37;
+        box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    }
+
     .video-wrapper {
         max-width: 560px;
         margin: 15px 0;
@@ -100,21 +148,16 @@
         border: none;
         display: block;
     }
+
     .signature-line {
         border-top: 2px solid #3a3a3a;
         margin: 30px 0 10px 0;
-    }
-    footer {
-        font-size: 14px;
-        color: #777;
-        margin-top: 10px;
-        text-align: center;
     }
 </style>
 </head>
 <body>
 
-    <h1>Pengabdi Setan 2</h1>
+    <h1>Pengabdi Setan</h1>
     <p class="subtitle">Sinopsis Film</p>
 
     <hr>
@@ -124,28 +167,75 @@
         <a href="sinopsis.html">Sinopsis</a> |
         <a href="pemain.html">Pemain</a> |
         <a href="gallery.html">Gallery</a> |
-        <a href="kontak.html">Kontak</a>
+        <a href="kontak.html">Kontak</a>    |
+        <a href="membership.html">Membership</a> 
     </div>
 
     <hr>
 
-    <img src="PengabdiSetan2.jpg" alt="Poster Pengabdi Setan 2: Communion" class="poster">
+    <h2>Daftar Film Horor</h2>
+    <p class="hint">Klik salah satu film pada tabel di bawah ini untuk melihat sinopsisnya.</p>
 
-    <h2>Sinopsis</h2>
-    <p>Pengabdi Setan 2: Communion adalah film horor Indonesia garapan sutradara Joko Anwar yang menjadi kelanjutan dari film Pengabdi Setan (2017). Film ini melanjutkan kisah keluarga Rini dan saudara-saudaranya beberapa tahun setelah teror yang mereka alami sebelumnya, kali ini berlatar di sebuah rumah susun tua di tepi pantai saat badai besar melanda.</p>
+    <table class="film">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Judul Film</th>
+                <th>Genre</th>
+                <th>Tahun</th>
+                <th>Sutradara</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody id="tabel-film">
+            <tr data-id="0">
+                <td>1</td>
+                <td>Pengabdi Setan</td>
+                <td>Horor, Misteri</td>
+                <td>2017</td>
+                <td>Joko Anwar</td>
+                <td class="rating">&#9733; 6.6</td>
+            </tr>
+            <tr data-id="1" class="aktif">
+                <td>2</td>
+                <td>Pengabdi Setan 2: Communion</td>
+                <td>Horor, Thriller</td>
+                <td>2022</td>
+                <td>Joko Anwar</td>
+                <td class="rating">&#9733; 6.7</td>
+            </tr>
+            <tr data-id="2">
+                <td>3</td>
+                <td>Sewu Dino</td>
+                <td>Horor, Mistik</td>
+                <td>2023</td>
+                <td>Kimo Stamboel</td>
+                <td class="rating">&#9733; 6.0</td>
+            </tr>
+            <tr data-id="3">
+                <td>4</td>
+                <td>KKN di Desa Penari</td>
+                <td>Horor, Mistik</td>
+                <td>2022</td>
+                <td>Awi Suryadi</td>
+                <td class="rating">&#9733; -</td>
+            </tr>
+            <tr data-id="4">
+                <td>5</td>
+                <td>Impetigore</td>
+                <td>Horor, Thriller</td>
+                <td>2019</td>
+                <td>Joko Anwar</td>
+                <td class="rating">&#9733; -</td>
+            </tr>
+        </tbody>
+    </table>
 
-    <p>Ketika keluarga tersebut terjebak akibat banjir dan cuaca ekstrem, mereka mulai menyadari bahwa kengerian masa lalu belum benar-benar berakhir. Teror demi teror muncul dari sudut-sudut gelap rumah susun, mengungkap rahasia kelam yang mengikat mereka pada sekte pemuja setan.</p>
-
-    <p>Terjebak tanpa jalan keluar di tengah badai, keluarga ini harus bertahan hidup sekaligus mengungkap kebenaran di balik teror yang terus menghantui mereka, sebelum semuanya terlambat.</p>
-
-    <div class="clear"></div>
-
-    <h2>Informasi Film</h2>
-    <div class="info-box">
-        <p><span>Sutradara</span> Joko Anwar</p>
-        <p><span>Genre</span> Horor, Thriller</p>
-        <p><span>Negara</span> Indonesia</p>
-        <p><span>Bahasa</span> Indonesia</p>
+    <div class="panel" id="panel-sinopsis">
+        <img id="poster" class="poster" src="PengabdiSetan2.jpg" alt="Poster Pengabdi Setan 2: Communion">
+        <h3 id="judul"></h3>
+        <div class="meta" id="meta"></div>
+        <div id="isi"></div>
     </div>
 
     <h2>Trailer</h2>
@@ -173,7 +263,94 @@
 
     <div class="signature-line"></div>
 
-    <p style="text-align:center;">Giovani &copy; 2026 Pengabdi Setan 2: Communion. Semua hak cipta dilindungi undang-undang</p>
+    <p style="text-align:center; font-size:14px;">Giovani &copy; 2026 Pengabdi Setan 2: Communion. Semua hak cipta dilindungi undang-undang</p>
+
+<script>
+    /* Isi "poster" dengan nama file gambar. Kosongkan ("") kalau belum ada. */
+    var film = [
+        {
+            judul: "Pengabdi Setan",
+            poster: "",
+            meta: "2017 | Horor, Misteri | Sutradara: Joko Anwar | Rating: 6.6/10",
+            isi: [
+                "Pengabdi Setan (2017) mengisahkan keluarga Rini yang hidup dalam kesulitan setelah sang ibu, seorang penyanyi yang pernah terkenal, jatuh sakit selama bertahun-tahun hingga akhirnya meninggal dunia.",
+                "Tak lama setelah kepergiannya, keluarga tersebut mulai mengalami kejadian-kejadian aneh dan menakutkan di rumah mereka, yang perlahan mengungkap rahasia kelam di balik masa lalu sang ibu."
+            ]
+        },
+        {
+            judul: "Pengabdi Setan 2: Communion",
+            poster: "PengabdiSetan2.jpg",
+            meta: "2022 | Horor, Thriller | Sutradara: Joko Anwar | Rating: 6.7/10",
+            isi: [
+                "Pengabdi Setan 2: Communion adalah film horor Indonesia garapan sutradara Joko Anwar yang menjadi kelanjutan dari film Pengabdi Setan (2017). Film ini melanjutkan kisah keluarga Rini dan saudara-saudaranya beberapa tahun setelah teror yang mereka alami sebelumnya, kali ini berlatar di sebuah rumah susun tua di tepi pantai saat badai besar melanda.",
+                "Ketika keluarga tersebut terjebak akibat banjir dan cuaca ekstrem, mereka mulai menyadari bahwa kengerian masa lalu belum benar-benar berakhir. Teror demi teror muncul dari sudut-sudut gelap rumah susun, mengungkap rahasia kelam yang mengikat mereka pada sekte pemuja setan.",
+                "Terjebak tanpa jalan keluar di tengah badai, keluarga ini harus bertahan hidup sekaligus mengungkap kebenaran di balik teror yang terus menghantui mereka, sebelum semuanya terlambat."
+            ]
+        },
+        {
+            judul: "Sewu Dino",
+            poster: "",
+            meta: "2023 | Horor, Mistik | Sutradara: Kimo Stamboel | Rating: 6.0/10",
+            isi: [
+                "Sewu Dino menceritakan kisah Sri, seorang perempuan muda yang diterima bekerja untuk keluarga kaya bernama Atmojo. Sri dipilih karena ia lahir pada hari Jumat Kliwon, yang dipercaya memiliki keistimewaan mistis.",
+                "Bersama dua pekerja lainnya, Erna dan Dini, Sri dibawa ke sebuah gubuk terisolasi di hutan untuk melakukan ritual pemandian gaib terhadap Dela Atmojo yang terkena kutukan ilmu hitam bernama Sewu Dino (Seribu Hari)."
+            ]
+        },
+        {
+            judul: "KKN di Desa Penari",
+            poster: "",
+            meta: "2022 | Horor, Mistik | Sutradara: Awi Suryadi",
+            isi: [
+                "KKN di Desa Penari berkisah tentang sekelompok mahasiswa yang menjalani Kuliah Kerja Nyata di sebuah desa terpencil di Jawa Timur.",
+                "Selama berada di sana, mereka melanggar pantangan setempat dan mulai diteror oleh kejadian-kejadian gaib yang mengancam keselamatan mereka."
+            ]
+        },
+        {
+            judul: "Impetigore",
+            poster: "",
+            meta: "2019 | Horor, Thriller | Sutradara: Joko Anwar",
+            isi: [
+                "Impetigore mengikuti Maya, seorang perempuan yang kembali ke desa asal ayahnya untuk mencari tahu warisan yang menantinya.",
+                "Di desa tersebut, ia justru menemukan rahasia kelam dan kutukan yang mengancam nyawanya."
+            ]
+        }
+    ];
+
+    var baris = document.querySelectorAll("#tabel-film tr");
+    var poster = document.getElementById("poster");
+
+    function tampil(i) {
+        var f = film[i];
+        document.getElementById("judul").textContent = f.judul;
+        document.getElementById("meta").textContent = f.meta;
+
+        if (f.poster) {
+            poster.src = f.poster;
+            poster.alt = "Poster " + f.judul;
+            poster.style.display = "block";
+        } else {
+            poster.style.display = "none";
+        }
+
+        var isi = document.getElementById("isi");
+        isi.innerHTML = "";
+        f.isi.forEach(function (teks) {
+            var p = document.createElement("p");
+            p.textContent = teks;
+            isi.appendChild(p);
+        });
+        baris.forEach(function (b) { b.classList.remove("aktif"); });
+        baris[i].classList.add("aktif");
+    }
+
+    baris.forEach(function (b) {
+        b.addEventListener("click", function () {
+            tampil(parseInt(b.getAttribute("data-id")));
+        });
+    });
+
+    tampil(1);
+</script>
 
 </body>
 </html>
