@@ -66,6 +66,34 @@
         border-radius: 6px;
         box-shadow: 0 0 15px rgba(0,0,0,0.6);
     }
+    /* Styling untuk Grid 5 Poster dengan Ukuran Sama */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .gallery-item {
+        text-align: center;
+        background: rgba(26, 26, 26, 0.8);
+        padding: 10px;
+        border: 1px solid #3a3a3a;
+        border-radius: 6px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    .gallery-item img {
+        width: 100%;
+        height: 300px; /* Menyamakan tinggi semua poster */
+        object-fit: cover; /* Menjaga proporsi gambar agar tidak gepeng */
+        border: 1px solid #d4af37;
+        border-radius: 4px;
+    }
+    .gallery-item p {
+        font-size: 14px;
+        color: #b3aca0;
+        margin-top: 8px;
+        margin-bottom: 0;
+    }
     .signature-line {
         border-top: 2px solid #3a3a3a;
         margin: 30px 0 10px 0;
@@ -94,11 +122,28 @@
         <a href="membership.html">Membership</a> 
     </div>
 
-    <hr>
-
-    <h2>Foto</h2>
-    <div class="gallery-single">
-        <img src="PengabdiSetan2.jpg" alt="Poster Pengabdi Setan 2: Communion">
+    <h2>Koleksi Poster Tambahan</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="Pegabdisetan 1.jpg" alt="Pegabdi Setan 1">
+            <p>Pegabdi Setan 1</p>
+        </div>
+        <div class="gallery-item">
+            <img src="PengabdiSetan2.jpg" alt="Pegabdi setan 2">
+            <p>Pegabdi setan 2</p>
+        </div>
+        <div class="gallery-item">
+            <img src="sewu.jpg" alt="sewu dino">
+            <p>sewu dino</p>
+        </div>
+        <div class="gallery-item">
+            <img src="desapenari.jpg" alt="Kkn Di Desa Penari">
+            <p>Kkn Di Desa Penari</p>
+        </div>
+        <div class="gallery-item">
+            <img src="impetigore.jpg" alt="Impetigore">
+            <p>Impetigore</p>
+        </div>
     </div>
 
     <div class="signature-line"></div>
