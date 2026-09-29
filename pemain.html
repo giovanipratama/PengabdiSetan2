@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Pemain - Pengabdi Setan 2</title>
+<title>Pemain - Film Horor</title>
 <style>
     body {
         font-family: "Times New Roman", Times, serif;
@@ -54,6 +54,51 @@
         border-bottom: 2px solid #d4af37;
         padding-bottom: 5px;
     }
+    .hint {
+        font-size: 14px;
+        color: #b3aca0;
+        font-style: italic;
+    }
+
+    table.film {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        font-size: 16px;
+        background: #161616;
+    }
+    table.film th {
+        background-color: #262019;
+        color: #d4af37;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
+        padding: 12px 14px;
+        text-align: left;
+        border: 1px solid #3a3a3a;
+    }
+    table.film td {
+        padding: 12px 14px;
+        border: 1px solid #3a3a3a;
+        color: #eae6da;
+    }
+    table.film td.rating {
+        color: #d4af37;
+        font-weight: bold;
+    }
+    table.film tbody tr {
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+    table.film tbody tr:hover td {
+        background-color: #201c14;
+    }
+    table.film tbody tr.aktif td {
+        background-color: #2c2415;
+        color: #d4af37;
+        font-weight: bold;
+    }
+
     .cast-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -81,17 +126,11 @@
         border-top: 2px solid #3a3a3a;
         margin: 30px 0 10px 0;
     }
-    footer {
-        font-size: 14px;
-        color: #777;
-        margin-top: 10px;
-        text-align: center;
-    }
 </style>
 </head>
 <body>
 
-    <h1>Pengabdi Setan 2</h1>
+    <h1 id="judul-halaman">Pengabdi Setan</h1>
     <p class="subtitle">Pemain Film</p>
 
     <hr>
@@ -107,73 +146,197 @@
 
     <hr>
 
+    <h2>Daftar Film Horor</h2>
+    <p class="hint">Klik salah satu film pada tabel di bawah ini untuk melihat daftar pemainnya.</p>
+
+    <table class="film">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Judul Film</th>
+                <th>Genre</th>
+                <th>Tahun</th>
+                <th>Sutradara</th>
+            </tr>
+        </thead>
+        <tbody id="tabel-film">
+            <tr data-id="0">
+                <td>1</td>
+                <td>Pengabdi Setan</td>
+                <td>Horor, Misteri</td>
+                <td>2017</td>
+                <td>Joko Anwar</td>
+            </tr>
+            <tr data-id="1" class="aktif">
+                <td>2</td>
+                <td>Pengabdi Setan 2: Communion</td>
+                <td>Horor, Thriller</td>
+                <td>2022</td>
+                <td>Joko Anwar</td>
+            </tr>
+            <tr data-id="2">
+                <td>3</td>
+                <td>Sewu Dino</td>
+                <td>Horor, Mistik</td>
+                <td>2023</td>
+                <td>Kimo Stamboel</td>
+            </tr>
+            <tr data-id="3">
+                <td>4</td>
+                <td>KKN di Desa Penari</td>
+                <td>Horor, Mistik</td>
+                <td>2022</td>
+                <td>Awi Suryadi</td>
+            </tr>
+            <tr data-id="4">
+                <td>5</td>
+                <td>Impetigore</td>
+                <td>Horor, Thriller</td>
+                <td>2019</td>
+                <td>Joko Anwar</td>
+            </tr>
+        </tbody>
+    </table>
+
     <h2>Pemeran Utama</h2>
-    <div class="cast-grid">
-        <div class="cast-card">
-            <h3>Tara Basro</h3>
-            <p>sebagai Rini Suwono</p>
-        </div>
-        <div class="cast-card">
-            <h3>Bront Palarae</h3>
-            <p>sebagai Bahri Suwono (Bapak)</p>
-        </div>
-        <div class="cast-card">
-            <h3>Endy Arfian</h3>
-            <p>sebagai Toni Suwono</p>
-        </div>
-        <div class="cast-card">
-            <h3>Nasar Anuz</h3>
-            <p>sebagai Bondi Suwono</p>
-        </div>
-        <div class="cast-card">
-            <h3>Ayu Laksmi</h3>
-            <p>sebagai Mawarni Suwono / Raminom</p>
-        </div>
-        <div class="cast-card">
-            <h3>M. Adhiyat</h3>
-            <p>sebagai Ian Suwono</p>
-        </div>
-    </div>
+    <div class="cast-grid" id="grid-utama"></div>
 
     <h2>Pemeran Pendukung</h2>
-    <div class="cast-grid">
-        <div class="cast-card">
-            <h3>Ratu Felisha</h3>
-            <p>sebagai Tari Daryati</p>
-        </div>
-        <div class="cast-card">
-            <h3>Jourdy Pranata</h3>
-            <p>sebagai Dino Suhendar</p>
-        </div>
-        <div class="cast-card">
-            <h3>Muzakki Ramdhan</h3>
-            <p>sebagai Wisnu Hendrawan</p>
-        </div>
-        <div class="cast-card">
-            <h3>Fatih Unru</h3>
-            <p>sebagai Ari Gunawan</p>
-        </div>
-        <div class="cast-card">
-            <h3>Egy Fedly</h3>
-            <p>sebagai Budiman Syailendra</p>
-        </div>
-        <div class="cast-card">
-            <h3>Kiki Narendra</h3>
-            <p>sebagai Ustaz Mahmud</p>
-        </div>
-        <div class="cast-card">
-            <h3>Rukman Rosadi</h3>
-            <p>sebagai Heru Kusuma</p>
-        </div>
-        <div class="cast-card">
-            <h3>Asmara Abigail</h3>
-            <p>sebagai Darminah</p>
-        </div>
-    </div>
+    <div class="cast-grid" id="grid-pendukung"></div>
 
     <div class="signature-line"></div>
 
     <p style="text-align:center; color:#d8d3c6; font-size:14px;">Giovani &copy; 2026 Pengabdi Setan 2: Communion. Semua hak cipta dilindungi undang-undang</p>
+
+<script>
+    var dataPemain = [
+        {
+            judul: "Pengabdi Setan",
+            utama: [
+                { nama: "Tara Basro", peran: "sebagai Rini Suwono" },
+                { nama: "Bront Palarae", peran: "sebagai Bahri Suwono (Bapak)" },
+                { nama: "Endy Arfian", peran: "sebagai Toni Suwono" },
+                { nama: "Nasar Anuz", peran: "sebagai Bondi Suwono" },
+                { nama: "M. Adhiyat", peran: "sebagai Ian Suwono" },
+                { nama: "Ayu Laksmi", peran: "sebagai Mawarni Suwono (Ibu)" }
+            ],
+            pendukung: [
+                { nama: "Ayu Conservatory", peran: "sebagai Darminah" },
+                { nama: "Egy Fedly", peran: "sebagai Budiman Syailendra" },
+                { nama: "Fachry Albar", peran: "sebagai Batara" },
+                { nama: "Asmara Abigail", peran: "sebagai Darminah" },
+                { nama: "Rini Ratna", peran: "sebagai Nenek" }
+            ]
+        },
+        {
+            judul: "Pengabdi Setan 2: Communion",
+            utama: [
+                { nama: "Tara Basro", peran: "sebagai Rini Suwono" },
+                { nama: "Bront Palarae", peran: "sebagai Bahri Suwono (Bapak)" },
+                { nama: "Endy Arfian", peran: "sebagai Toni Suwono" },
+                { nama: "Nasar Anuz", peran: "sebagai Bondi Suwono" },
+                { nama: "Ayu Laksmi", peran: "sebagai Mawarni Suwono / Raminom" },
+                { nama: "M. Adhiyat", peran: "sebagai Ian Suwono" }
+            ],
+            pendukung: [
+                { nama: "Ratu Felisha", peran: "sebagai Tari Daryati" },
+                { nama: "Jourdy Pranata", peran: "sebagai Dino Suhendar" },
+                { nama: "Muzakki Ramdhan", peran: "sebagai Wisnu Hendrawan" },
+                { nama: "Fatih Unru", peran: "sebagai Ari Gunawan" },
+                { nama: "Egy Fedly", peran: "sebagai Budiman Syailendra" },
+                { nama: "Kiki Narendra", peran: "sebagai Ustaz Mahmud" },
+                { nama: "Rukman Rosadi", peran: "sebagai Heru Kusuma" },
+                { nama: "Asmara Abigail", peran: "sebagai Darminah" }
+            ]
+        },
+        {
+            judul: "Sewu Dino",
+            utama: [
+                { nama: "Mikha Tambayong", peran: "sebagai Sri" },
+                { nama: "Givina Lukita Dewi", peran: "sebagai Erna" },
+                { nama: "Agla Artalidia", peran: "sebagai Dini" },
+                { nama: "Gisellma Firmansyah", peran: "sebagai Dela Atmojo" }
+            ],
+            pendukung: [
+                { nama: "Rio Dewanto", peran: "sebagai Sugik" },
+                { nama: "Karina Suwandi", peran: "sebagai Karsa Atmojo" },
+                { nama: "Pritt Timothy", peran: "sebagai Sarmin" },
+                { nama: "Siti Nuraini", peran: "sebagai Minah" }
+            ]
+        },
+        {
+            judul: "KKN di Desa Penari",
+            utama: [
+                { nama: "Tissa Biani", peran: "sebagai Nur" },
+                { nama: "Adinda Thomas", peran: "sebagai Widya" },
+                { nama: "Achmad Megantara", peran: "sebagai Bima" },
+                { nama: "Aghniny Haque", peran: "sebagai Ayu" }
+            ],
+            pendukung: [
+                { nama: "Calvin Jeremy", peran: "sebagai Anton" },
+                { nama: "Fajar Nugra", peran: "sebagai Wahyu" },
+                { nama: "Kiki Narendra", peran: "sebagai Pak Prabu" },
+                { nama: "Aulia Sarah", peran: "sebagai Badarawuhi" }
+            ]
+        },
+        {
+            judul: "Impetigore",
+            utama: [
+                { nama: "Tara Basro", peran: "sebagai Maya / Rahayu" },
+                { nama: "Marissa Anita", peran: "sebagai Dini" },
+                { nama: "Christine Hakim", peran: "sebagai Nyi Misni" },
+                { nama: "Ario Bayu", peran: "sebagai Ki Saptadi" }
+            ],
+            pendukung: [
+                { nama: "Asmara Abigail", peran: "sebagai Ratih" },
+                { nama: "Kiki Narendra", peran: "sebagai Atik" },
+                { nama: "Zidni Hakim", peran: "sebagai Doni" },
+                { nama: "Faradina Mufti", peran: "sebagai Ningsih" }
+            ]
+        }
+    ];
+
+    var baris = document.querySelectorAll("#tabel-film tr");
+    var judulHalaman = document.getElementById("judul-halaman");
+    var gridUtama = document.getElementById("grid-utama");
+    var gridPendukung = document.getElementById("grid-pendukung");
+
+    function tampilPemain(i) {
+        var data = dataPemain[i];
+        judulHalaman.textContent = data.judul;
+
+        // Render Pemeran Utama
+        gridUtama.innerHTML = "";
+        data.utama.forEach(function(p) {
+            var card = document.createElement("div");
+            card.className = "cast-card";
+            card.innerHTML = `<h3>${p.nama}</h3><p>${p.peran}</p>`;
+            gridUtama.appendChild(card);
+        });
+
+        // Render Pemeran Pendukung
+        gridPendukung.innerHTML = "";
+        data.pendukung.forEach(function(p) {
+            var card = document.createElement("div");
+            card.className = "cast-card";
+            card.innerHTML = `<h3>${p.nama}</h3><p>${p.peran}</p>`;
+            gridPendukung.appendChild(card);
+        });
+
+        // Ubah kelas aktif pada tabel
+        baris.forEach(function (b) { b.classList.remove("aktif"); });
+        baris[i].classList.add("aktif");
+    }
+
+    baris.forEach(function (b) {
+        b.addEventListener("click", function () {
+            tampilPemain(parseInt(b.getAttribute("data-id")));
+        });
+    });
+
+    // Default menampilkan film indeks ke-1 (Pengabdi Setan 2)
+    tampilPemain(1);
+</script>
 
 </body>
 </html>
