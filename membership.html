@@ -54,37 +54,100 @@
         border-bottom: 2px solid #d4af37;
         padding-bottom: 5px;
     }
-    ol.paket {
-        margin-top: 20px;
-        padding-left: 25px;
+
+    /* Styling Grid Paket Membership */
+    .pricing-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
     }
-    ol.paket li {
-        background-color: #161616;
+    .pricing-card {
+        background: linear-gradient(145deg, #161616, #111111);
         border: 1px solid #3a3a3a;
-        border-radius: 8px;
-        padding: 14px 18px;
-        margin-bottom: 15px;
-        color: #d8d3c6;
-        font-size: 15px;
-        line-height: 1.6;
+        border-radius: 10px;
+        padding: 25px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
     }
-    ol.paket li strong {
+    .pricing-card:hover {
+        transform: translateY(-8px);
+        border-color: #d4af37;
+        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+    }
+    .pricing-card.featured {
+        border: 2px solid #d4af37;
+        background: linear-gradient(145deg, #1a1710, #111111);
+    }
+    .pricing-card.featured::before {
+        content: "TERPOPULER";
+        position: absolute;
+        top: 15px;
+        right: -30px;
+        background: #d4af37;
+        color: #0a0a0c;
+        font-size: 10px;
+        font-weight: bold;
+        padding: 4px 30px;
+        transform: rotate(45deg);
+        letter-spacing: 1px;
+    }
+    .pricing-title {
         color: #d4af37;
-        font-size: 17px;
-        display: block;
-        margin-bottom: 6px;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
     }
+    .pricing-price {
+        font-size: 28px;
+        color: #eae6da;
+        font-weight: bold;
+        margin: 15px 0;
+        text-shadow: 0 0 5px rgba(212,175,55,0.3);
+    }
+    .pricing-desc {
+        color: #b3aca0;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        flex-grow: 1;
+    }
+    .btn-beli {
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 0;
+        background-color: transparent;
+        color: #d4af37;
+        border: 1px solid #d4af37;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .btn-beli:hover {
+        background-color: #d4af37;
+        color: #0a0a0c;
+        box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+    }
+
     .signature-line {
         border-top: 2px solid #3a3a3a;
-        margin: 30px 0 10px 0;
-    }
-    footer {
-        font-size: 14px;
-        color: #777;
-        margin-top: 10px;
-        text-align: center;
+        margin: 40px 0 10px 0;
     }
 </style>
+<script>
+    function beliPaket(namaPaket) {
+        alert("Berhasil! Anda telah membeli paket " + namaPaket + ".");
+    }
+</script>
 </head>
 <body>
 
@@ -105,20 +168,38 @@
     <hr>
 
     <h2>Paket Berlangganan</h2>
-    <ol class="paket">
-        <li>
-            <strong>Reguler &mdash; Rp 40.000</strong>
-            Cocok untuk penonton biasa yang ingin menyaksikan film di hari kerja (Senin - Kamis). Tidak ada fasilitas tambahan, kursi standar di studio reguler.
-        </li>
-        <li>
-            <strong>Weekend &mdash; Rp 50.000</strong>
-            Berlaku untuk jadwal tayang di akhir pekan (Jumat - Minggu). Harga sedikit lebih tinggi karena permintaan tiket yang lebih ramai pada hari tersebut.
-        </li>
-        <li>
-            <strong>VIP / Premiere &mdash; Rp 100.000</strong>
-            Tersedia setiap hari dengan kursi lebih luas dan nyaman, prioritas pemilihan tempat duduk, serta akses studio premium. Cocok untuk yang ingin pengalaman menonton lebih eksklusif.
-        </li>
-    </ol>
+    
+    <div class="pricing-container">
+        <!-- Paket Reguler -->
+        <div class="pricing-card">
+            <div>
+                <div class="pricing-title">Reguler</div>
+                <div class="pricing-price">$3.00</div>
+                <div class="pricing-desc">Cocok untuk penonton biasa yang ingin menyaksikan film di hari kerja (Senin - Kamis). Tidak ada fasilitas tambahan, kursi standar di studio reguler.</div>
+            </div>
+            <button class="btn-beli" onclick="beliPaket('Reguler')">Beli Paket</button>
+        </div>
+
+        <!-- Paket Weekend -->
+        <div class="pricing-card">
+            <div>
+                <div class="pricing-title">Weekend</div>
+                <div class="pricing-price">$4.00</div>
+                <div class="pricing-desc">Berlaku untuk jadwal tayang di akhir pekan (Jumat - Minggu). Harga sedikit lebih tinggi karena permintaan tiket yang lebih ramai pada hari tersebut.</div>
+            </div>
+            <button class="btn-beli" onclick="beliPaket('Weekend')">Beli Paket</button>
+        </div>
+
+        <!-- Paket VIP -->
+        <div class="pricing-card featured">
+            <div>
+                <div class="pricing-title">VIP / Premiere</div>
+                <div class="pricing-price">$7.00</div>
+                <div class="pricing-desc">Tersedia setiap hari dengan kursi lebih luas dan nyaman, prioritas pemilihan tempat duduk, serta akses studio premium untuk pengalaman eksklusif.</div>
+            </div>
+            <button class="btn-beli" onclick="beliPaket('VIP / Premiere')">Beli Paket</button>
+        </div>
+    </div>
 
     <div class="signature-line"></div>
 
