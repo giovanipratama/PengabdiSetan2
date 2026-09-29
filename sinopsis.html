@@ -232,33 +232,33 @@
     </table>
 
     <div class="panel" id="panel-sinopsis">
-        <img id="poster" class="poster" src="PengabdiSetan2.jpg" alt="Poster Pengabdi Setan 2: Communion">
+        <img id="poster" class="poster" src="" alt="Poster Film">
         <h3 id="judul"></h3>
         <div class="meta" id="meta"></div>
         <div id="isi"></div>
-    </div>
 
-    <h2>Trailer</h2>
-    <div class="video-wrapper">
-        <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/mpvFhxVGvso?controls=1"
-            title="Trailer Pengabdi Setan 2: Communion"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
-    </div>
+        <h2>Trailer</h2>
+        <div class="video-wrapper">
+            <iframe id="trailer-iframe" width="560" height="315"
+                src=""
+                title="Trailer Film"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
 
-    <h2>Soundtrack</h2>
-    <p>Rahasia Dendam &mdash; The Spouse feat. Aimee Saras</p>
-    <div class="video-wrapper">
-        <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/Tkbtp9crN3c?controls=1"
-            title="Rahasia Dendam - Soundtrack Pengabdi Setan 2: Communion"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
+        <h2>Soundtrack</h2>
+        <p id="soundtrack-text" style="font-style: italic; margin-bottom: 8px;"></p>
+        <div class="video-wrapper">
+            <iframe id="soundtrack-iframe" width="560" height="315"
+                src=""
+                title="Soundtrack Film"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
     </div>
 
     <div class="signature-line"></div>
@@ -266,8 +266,7 @@
     <p style="text-align:center; font-size:14px;">Giovani &copy; 2026 Pengabdi Setan 2: Communion. Semua hak cipta dilindungi undang-undang</p>
 
 <script>
-    /* Isi "poster" dengan nama file gambar. Kosongkan ("") kalau belum ada. */
-    var film = [
+   var film = [
         {
             judul: "Pengabdi Setan",
             poster: "",
@@ -275,7 +274,10 @@
             isi: [
                 "Pengabdi Setan (2017) mengisahkan keluarga Rini yang hidup dalam kesulitan setelah sang ibu, seorang penyanyi yang pernah terkenal, jatuh sakit selama bertahun-tahun hingga akhirnya meninggal dunia.",
                 "Tak lama setelah kepergiannya, keluarga tersebut mulai mengalami kejadian-kejadian aneh dan menakutkan di rumah mereka, yang perlahan mengungkap rahasia kelam di balik masa lalu sang ibu."
-            ]
+            ],
+            trailerUrl: "https://www.youtube.com/embed/5GkD7hrsY_g", // Trailer Resmi Pengabdi Setan (2017)
+            soundtrackTitle: "Kelam Malam &mdash; Aimee Saras",
+            soundtrackUrl: "https://www.youtube.com/embed/e1BCH2j_z4g" // OST Kelam Malam
         },
         {
             judul: "Pengabdi Setan 2: Communion",
@@ -285,7 +287,10 @@
                 "Pengabdi Setan 2: Communion adalah film horor Indonesia garapan sutradara Joko Anwar yang menjadi kelanjutan dari film Pengabdi Setan (2017). Film ini melanjutkan kisah keluarga Rini dan saudara-saudaranya beberapa tahun setelah teror yang mereka alami sebelumnya, kali ini berlatar di sebuah rumah susun tua di tepi pantai saat badai besar melanda.",
                 "Ketika keluarga tersebut terjebak akibat banjir dan cuaca ekstrem, mereka mulai menyadari bahwa kengerian masa lalu belum benar-benar berakhir. Teror demi teror muncul dari sudut-sudut gelap rumah susun, mengungkap rahasia kelam yang mengikat mereka pada sekte pemuja setan.",
                 "Terjebak tanpa jalan keluar di tengah badai, keluarga ini harus bertahan hidup sekaligus mengungkap kebenaran di balik teror yang terus menghantui mereka, sebelum semuanya terlambat."
-            ]
+            ],
+            trailerUrl: "https://www.youtube.com/embed/mpvFhxVGvso", // Trailer Resmi Pengabdi Setan 2
+            soundtrackTitle: "Rahasia Dendam &mdash; The Spouse feat. Aimee Saras",
+            soundtrackUrl: "https://www.youtube.com/embed/Tkbtp9crN3c" // OST Rahasia Dendam
         },
         {
             judul: "Sewu Dino",
@@ -294,7 +299,10 @@
             isi: [
                 "Sewu Dino menceritakan kisah Sri, seorang perempuan muda yang diterima bekerja untuk keluarga kaya bernama Atmojo. Sri dipilih karena ia lahir pada hari Jumat Kliwon, yang dipercaya memiliki keistimewaan mistis.",
                 "Bersama dua pekerja lainnya, Erna dan Dini, Sri dibawa ke sebuah gubuk terisolasi di hutan untuk melakukan ritual pemandian gaib terhadap Dela Atmojo yang terkena kutukan ilmu hitam bernama Sewu Dino (Seribu Hari)."
-            ]
+            ],
+            trailerUrl: "https://www.youtube.com/embed/WhhuLy4NvqM", // Official Trailer Sewu Dino (MD Pictures / Cinepolis)
+            soundtrackTitle: "Sewu Dino (Original Soundtrack)",
+            soundtrackUrl: "https://www.youtube.com/embed/WhhuLy4NvqM" 
         },
         {
             judul: "KKN di Desa Penari",
@@ -303,7 +311,10 @@
             isi: [
                 "KKN di Desa Penari berkisah tentang sekelompok mahasiswa yang menjalani Kuliah Kerja Nyata di sebuah desa terpencil di Jawa Timur.",
                 "Selama berada di sana, mereka melanggar pantangan setempat dan mulai diteror oleh kejadian-kejadian gaib yang mengancam keselamatan mereka."
-            ]
+            ],
+            trailerUrl: "https://www.youtube.com/embed/_ykK5YsWes0", // Official Trailer KKN di Desa Penari (MD Pictures)
+            soundtrackTitle: "Darak &mdash; MD Music",
+            soundtrackUrl: "https://www.youtube.com/embed/_ykK5YsWes0"
         },
         {
             judul: "Impetigore",
@@ -312,12 +323,18 @@
             isi: [
                 "Impetigore mengikuti Maya, seorang perempuan yang kembali ke desa asal ayahnya untuk mencari tahu warisan yang menantinya.",
                 "Di desa tersebut, ia justru menemukan rahasia kelam dan kutukan yang mengancam nyawanya."
-            ]
+            ],
+            trailerUrl: "https://www.youtube.com/embed/xtOOlXJxw_E", // Trailer / Scene Perempuan Tanah Jahanam (Impetigore)
+            soundtrackTitle: "Impetigore (Perempuan Tanah Jahanam) OST",
+            soundtrackUrl: "https://www.youtube.com/embed/xtOOlXJxw_E"
         }
     ];
 
     var baris = document.querySelectorAll("#tabel-film tr");
     var poster = document.getElementById("poster");
+    var trailerIframe = document.getElementById("trailer-iframe");
+    var soundtrackIframe = document.getElementById("soundtrack-iframe");
+    var soundtrackText = document.getElementById("soundtrack-text");
 
     function tampil(i) {
         var f = film[i];
@@ -339,6 +356,12 @@
             p.textContent = teks;
             isi.appendChild(p);
         });
+
+        // Update Trailer & Soundtrack dinamis
+        trailerIframe.src = f.trailerUrl + "?controls=1";
+        soundtrackIframe.src = f.soundtrackUrl + "?controls=1";
+        soundtrackText.innerHTML = f.soundtrackTitle;
+
         baris.forEach(function (b) { b.classList.remove("aktif"); });
         baris[i].classList.add("aktif");
     }
