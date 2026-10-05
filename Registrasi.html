@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Registrasi Membership - Pengabdi Setan</title>
+<style>
+    body {
+        font-family: "Times New Roman", Times, serif;
+        margin: 0;
+        padding: 30px;
+        color: #eae6da;
+        background: radial-gradient(circle at top, #1a1a1a 0%, #0a0a0c 70%);
+        background-attachment: fixed;
+    }
+    h1 {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #d4af37;
+        letter-spacing: 1px;
+        text-shadow: 0 0 8px rgba(212,175,55,0.4);
+    }
+    .subtitle {
+        font-size: 18px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: #b3aca0;
+        font-style: italic;
+    }
+    hr {
+        border: none;
+        border-top: 2px solid #d4af37;
+        margin: 10px 0;
+        opacity: 0.6;
+    }
+    .menu {
+        font-size: 18px;
+        margin: 15px 0;
+    }
+    .menu a {
+        color: #eae6da;
+        text-decoration: none;
+        margin-right: 40px;
+        transition: color 0.2s;
+    }
+    .menu a:hover {
+        color: #d4af37;
+        text-decoration: underline;
+    }
+    h2 {
+        font-size: 22px;
+        margin-top: 30px;
+        color: #d4af37;
+        border-bottom: 2px solid #d4af37;
+        padding-bottom: 5px;
+    }
+    .hint {
+        font-size: 14px;
+        color: #b3aca0;
+        font-style: italic;
+        margin-top: 10px;
+    }
+
+    form {
+        max-width: 480px;
+        margin-top: 20px;
+        background-color: #161616;
+        border: 1px solid #3a3a3a;
+        border-radius: 10px;
+        padding: 25px 30px;
+    }
+    .field {
+        margin-bottom: 18px;
+    }
+    label {
+        display: block;
+        font-size: 15px;
+        color: #d4af37;
+        margin-bottom: 6px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+        width: 100%;
+        padding: 10px 12px;
+        font-size: 15px;
+        font-family: inherit;
+        background-color: #0f0f0f;
+        border: 1px solid #3a3a3a;
+        border-radius: 6px;
+        color: #eae6da;
+        box-sizing: border-box;
+    }
+    input:focus, select:focus {
+        outline: none;
+        border-color: #d4af37;
+    }
+
+    fieldset {
+        border: 1px solid #3a3a3a;
+        border-radius: 8px;
+        padding: 15px 18px;
+        margin-bottom: 18px;
+    }
+    legend {
+        color: #d4af37;
+        font-size: 15px;
+        padding: 0 8px;
+    }
+    .opsi-bayar {
+        margin-bottom: 10px;
+    }
+    .opsi-bayar label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #eae6da;
+        font-size: 15px;
+        cursor: pointer;
+        margin-bottom: 0;
+    }
+    .opsi-bayar input[type="radio"] {
+        accent-color: #d4af37;
+        width: 16px;
+        height: 16px;
+    }
+    .logo-kartu {
+        display: inline-flex;
+        gap: 6px;
+        margin-left: 4px;
+    }
+    .badge {
+        font-size: 11px;
+        font-weight: bold;
+        padding: 3px 7px;
+        border-radius: 4px;
+        letter-spacing: 0.5px;
+    }
+    .badge-visa {
+        background-color: #1a1f71;
+        color: #fff;
+    }
+    .badge-mc {
+        background-color: #eb001b;
+        color: #fff;
+    }
+    .badge-dompet {
+        background-color: #2c2415;
+        color: #d4af37;
+        border: 1px solid #d4af37;
+    }
+    .detail-bayar {
+        margin-top: 10px;
+        margin-left: 26px;
+        display: none;
+    }
+    .detail-bayar.tampil {
+        display: block;
+    }
+
+    .ringkasan {
+        background-color: #0f0f0f;
+        border: 1px solid #3a3a3a;
+        border-radius: 6px;
+        padding: 12px 15px;
+        margin-bottom: 18px;
+        font-size: 14px;
+        color: #b3aca0;
+        display: none;
+    }
+    .ringkasan.tampil {
+        display: block;
+    }
+    .ringkasan span {
+        color: #d4af37;
+        font-weight: bold;
+    }
+
+    .btn-submit {
+        width: 100%;
+        padding: 12px;
+        background-color: #d4af37;
+        color: #0a0a0c;
+        border: none;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: inherit;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .btn-submit:hover {
+        background-color: #eecb5a;
+    }
+
+    .signature-line {
+        border-top: 2px solid #3a3a3a;
+        margin: 30px 0 10px 0;
+    }
+</style>
+</head>
+<body>
+
+    <h1>Pengabdi Setan</h1>
+    <p class="subtitle">Registrasi Membership</p>
+
+    <hr>
+
+    <div class="menu">
+     <a href="index.html">Home</a> |
+        <a href="sinopsis.html">Sinopsis</a> |
+        <a href="pemain.html">Pemain</a> |
+        <a href="gallery.html">Gallery</a> |
+        <a href="kontak.html">Kontak</a>    |
+        <a href="membership.html">Membership</a> |
+        <a href="Registrasi.html">Registrasi</a> 
+    </div>
+
+    <hr>
+
+    <h2>Daftar untuk Berlangganan Membership</h2>
+    <p class="hint">Isi data berikut untuk membeli paket membership. Lihat rincian paket di halaman <a href="membership.html" style="color:#d4af37;">Membership</a>.</p>
+
+    <form id="form-registrasi">
+        <div class="field">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+        </div>
+
+        <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+        </div>
+
+        <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Minimal 8 karakter" required>
+        </div>
+
+        <div class="field">
+            <label for="paket">Pilih Paket Membership</label>
+            <select id="paket" name="paket" required onchange="perbaruiRingkasan()">
+                <option value="">-- Pilih Paket --</option>
+                <option value="basic" data-harga="Rp 40.000 / tayang">Basic — Rp 40.000</option>
+                <option value="standar" data-harga="Rp 50.000 / tayang">Standar — Rp 50.000</option>
+                <option value="premium" data-harga="Rp 100.000 / tayang">Premium — Rp 100.000</option>
+            </select>
+        </div>
+
+        <div class="ringkasan" id="ringkasan">
+            Paket dipilih: <span id="ringkasan-paket"></span> — <span id="ringkasan-harga"></span>
+        </div>
+
+        <fieldset>
+            <legend>Metode Pembayaran</legend>
+
+            <div class="opsi-bayar">
+                <label>
+                    <input type="radio" name="pembayaran" value="kartu" onclick="tampilkanDetail('kartu')" required>
+                    Kartu Debit/Kredit
+                    <span class="logo-kartu">
+                        <span class="badge badge-visa">VISA</span>
+                        <span class="badge badge-mc">MasterCard</span>
+                    </span>
+                </label>
+                <div class="detail-bayar" id="detail-kartu">
+                    <label for="nomor-kartu">Nomor Kartu</label>
+                    <input type="text" id="nomor-kartu" name="nomor_kartu" placeholder="0000 0000 0000 0000" maxlength="19">
+                </div>
+            </div>
+
+            <div class="opsi-bayar">
+                <label>
+                    <input type="radio" name="pembayaran" value="dompet" onclick="tampilkanDetail('dompet')">
+                    Dompet Digital
+                    <span class="logo-kartu">
+                        <span class="badge badge-dompet">GoPay</span>
+                        <span class="badge badge-dompet">OVO</span>
+                        <span class="badge badge-dompet">DANA</span>
+                    </span>
+                </label>
+                <div class="detail-bayar" id="detail-dompet">
+                    <label for="nomor-dompet">Nomor HP Terdaftar</label>
+                    <input type="text" id="nomor-dompet" name="nomor_dompet" placeholder="08xxxxxxxxxx">
+                </div>
+            </div>
+        </fieldset>
+
+        <button type="submit" class="btn-submit">Beli Membership</button>
+    </form>
+
+    <div class="signature-line"></div>
+
+    <p style="text-align:center; font-size:14px;">Giovani &copy; 2026 Pengabdi Setan 2: Communion. Semua hak cipta dilindungi undang-undang</p>
+
+<script>
+    function tampilkanDetail(jenis) {
+        document.getElementById("detail-kartu").classList.remove("tampil");
+        document.getElementById("detail-dompet").classList.remove("tampil");
+        document.getElementById("detail-" + jenis).classList.add("tampil");
+    }
+
+    function perbaruiRingkasan() {
+        var select = document.getElementById("paket");
+        var ringkasan = document.getElementById("ringkasan");
+        if (select.value === "") {
+            ringkasan.classList.remove("tampil");
+            return;
+        }
+        var opsiTerpilih = select.options[select.selectedIndex];
+        document.getElementById("ringkasan-paket").textContent = opsiTerpilih.text.split(" — ")[0];
+        document.getElementById("ringkasan-harga").textContent = opsiTerpilih.getAttribute("data-harga");
+        ringkasan.classList.add("tampil");
+    }
+
+    document.getElementById("form-registrasi").addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Registrasi membership berhasil dikirim!");
+    });
+</script>
+
+</body>
+</html>
