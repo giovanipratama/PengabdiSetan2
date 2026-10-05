@@ -2,6 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pemain - Film Horor</title>
 <style>
     body {
@@ -82,10 +83,6 @@
         border: 1px solid #3a3a3a;
         color: #eae6da;
     }
-    table.film td.rating {
-        color: #d4af37;
-        font-weight: bold;
-    }
     table.film tbody tr {
         cursor: pointer;
         transition: background-color 0.2s;
@@ -131,7 +128,7 @@
 <body>
 
     <h1>Pratama Studio</h1>
-    <p class="subtitle">Pemain Film</p>
+    <p class="subtitle" id="judul-halaman">Pemain Film</p>
 
     <hr>
 
@@ -140,8 +137,9 @@
         <a href="sinopsis.html">Sinopsis</a> |
         <a href="pemain.html">Pemain</a> |
         <a href="gallery.html">Gallery</a> |
-        <a href="kontak.html">Kontak</a>    |
-        <a href="membership.html">Membership</a> 
+        <a href="kontak.html">Kontak</a> |
+        <a href="membership.html">Membership</a> |
+        <a href="registrasi.html">Registrasi</a>
     </div>
 
     <hr>
@@ -221,11 +219,10 @@
                 { nama: "Ayu Laksmi", peran: "sebagai Mawarni Suwono (Ibu)" }
             ],
             pendukung: [
-                { nama: "Ayu Conservatory", peran: "sebagai Darminah" },
-                { nama: "Egy Fedly", peran: "sebagai Budiman Syailendra" },
-                { nama: "Fachry Albar", peran: "sebagai Batara" },
                 { nama: "Asmara Abigail", peran: "sebagai Darminah" },
-                { nama: "Rini Ratna", peran: "sebagai Nenek" }
+                { nama: "Egy Fedly", peran: "sebagai Budiman Syailendra" },
+                { nama: "Fachry Albar", peran: "sebagai Hendra" },
+                { nama: "Elly D. Luthan", peran: "sebagai Nenek" }
             ]
         },
         {
@@ -301,29 +298,27 @@
     var gridUtama = document.getElementById("grid-utama");
     var gridPendukung = document.getElementById("grid-pendukung");
 
+    function buatKartu(p) {
+        var card = document.createElement("div");
+        card.className = "cast-card";
+        card.innerHTML = "<h3>" + p.nama + "</h3><p>" + p.peran + "</p>";
+        return card;
+    }
+
     function tampilPemain(i) {
         var data = dataPemain[i];
-        judulHalaman.textContent = data.judul;
+        judulHalaman.textContent = "Pemain Film: " + data.judul;
 
-        // Render Pemeran Utama
         gridUtama.innerHTML = "";
-        data.utama.forEach(function(p) {
-            var card = document.createElement("div");
-            card.className = "cast-card";
-            card.innerHTML = `<h3>${p.nama}</h3><p>${p.peran}</p>`;
-            gridUtama.appendChild(card);
+        data.utama.forEach(function (p) {
+            gridUtama.appendChild(buatKartu(p));
         });
 
-        // Render Pemeran Pendukung
         gridPendukung.innerHTML = "";
-        data.pendukung.forEach(function(p) {
-            var card = document.createElement("div");
-            card.className = "cast-card";
-            card.innerHTML = `<h3>${p.nama}</h3><p>${p.peran}</p>`;
-            gridPendukung.appendChild(card);
+        data.pendukung.forEach(function (p) {
+            gridPendukung.appendChild(buatKartu(p));
         });
 
-        // Ubah kelas aktif pada tabel
         baris.forEach(function (b) { b.classList.remove("aktif"); });
         baris[i].classList.add("aktif");
     }
